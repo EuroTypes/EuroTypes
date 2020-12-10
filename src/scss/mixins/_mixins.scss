@@ -1,0 +1,23 @@
+@mixin HoverFx($height, $Color, $scaleX ) {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: $height;
+        background-color: $Color;
+        border-radius: 50px;
+
+        // @include ColorTransition;
+        transform-origin: right;
+        transform: scaleX($scaleX);
+        transition: transform .3s cubic-bezier(0,.79,.79,.93);
+    }
+    &:hover::after,
+    &:focus::after {
+        transform: scaleX(1);
+        transform-origin: center;
+    }
+}
