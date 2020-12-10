@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import './mixins/mixins';
+@import "./mixins/mixins";
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #1B1317;
+  color: #1b1317;
 }
 
 body {
@@ -22,12 +22,12 @@ body {
     "aside main";
 
   background-color: #fafafa;
-  
 }
 
-a{
+a {
   text-decoration: none;
-  @include HoverFx(3px, #0f0, 0);
+  @include HoverFx(2px, #1b1317, 0);
+  width: max-content;
 }
 
 header {
@@ -42,6 +42,28 @@ main {
 
   width: 80vw;
   height: calc(100vh - 100px);
+
+  .content {
+    width: 80vw;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h2 {
+      font-size: 96px;
+      font-weight: normal;
+      span{
+        font-weight: bolder;
+      }
+    }
+    p{
+      font-size: 64px;
+    }
+    a{
+      font-size: 24px;
+
+    }
+  }
 }
 
 aside {
@@ -52,5 +74,8 @@ aside {
   width: 20vw;
   height: calc(100vh - 100px);
 
-  
+  a {
+    font-weight: bold;
+    margin-left: 20px;
+  }
 }
