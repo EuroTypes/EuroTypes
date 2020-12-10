@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "./mixins/mixins";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #1b1317;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "header header"
+    "aside main";
+
+  background-color: #fafafa;
+
+  .backgroundimg{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: -1;
+  }
+}
+
+a {
+  text-decoration: none;
+  @include HoverFx(2px, #1b1317, 0);
+  width: max-content;
+}
+
+header {
+  width: 100vw;
+  height: 190px;
+
+  grid-area: header;
+
+  .logo{
+    margin: 40px;
+  }
+}
+
+main {
+  grid-area: main;
+
+  width: 80vw;
+  height: calc(100vh - 190px);
+
+  .content {
+    width: 80vw;
+    height: calc(100vh - 190px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h2 {
+      font-size: 96px;
+      font-weight: normal;
+      span{
+        font-weight: bolder;
+      }
+    }
+    p{
+      font-size: 64px;
+    }
+    a{
+      font-size: 24px;
+
+    }
+  }
+}
+
+aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+
+  width: 20vw;
+  height: calc(100vh - 100px);
+
+  padding-top: 20px;
+
+  a {
+    font-weight: bold;
+    margin: 20px 40px;
+    font-size: 24px;
+  }
+}
