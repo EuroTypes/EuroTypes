@@ -22,6 +22,13 @@ body {
     "aside main";
 
   background-color: #fafafa;
+
+  .backgroundimg{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: -1;
+  }
 }
 
 a {
@@ -32,20 +39,24 @@ a {
 
 header {
   width: 100vw;
-  height: 100px;
+  height: 190px;
 
   grid-area: header;
+
+  .logo{
+    margin: 40px;
+  }
 }
 
 main {
   grid-area: main;
 
   width: 80vw;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 190px);
 
   .content {
     width: 80vw;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 190px);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -74,8 +85,11 @@ aside {
   width: 20vw;
   height: calc(100vh - 100px);
 
+  padding-top: 20px;
+
   a {
     font-weight: bold;
-    margin-left: 20px;
+    margin: 20px 40px;
+    font-size: 24px;
   }
 }
