@@ -18,7 +18,7 @@ body {
       grid-template-columns: auto auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-      grid-template-areas: "header header" "aside main";
+      grid-template-areas: "header header" "aside main";
   background-color: #fafafa;
 }
 
@@ -74,6 +74,60 @@ header {
 
 header .logo {
   margin: 40px;
+}
+
+header .menu-switch {
+  display: block;
+  position: absolute;
+  top: 90px;
+  right: 80px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+header .menu-switch input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+header .menu-switch span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #1b1317;
+  border-radius: 3px;
+  z-index: 1;
+  -webkit-transform-origin: 4px 0px;
+          transform-origin: 4px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+header .menu-switch span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+header .menu-switch span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
 }
 
 main {
@@ -135,5 +189,45 @@ aside a {
   font-weight: bold;
   margin: 20px 40px;
   font-size: 24px;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+        grid-template-areas: "header header" "main main";
+  }
+  body aside {
+    display: none;
+  }
+  body main {
+    width: 100vw;
+  }
+  body main .content {
+    width: 100vw;
+  }
+  body main .content .spacer {
+    display: none;
+  }
+  body main .content h2 {
+    display: none;
+  }
+  body main .content .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .content .wrapper p {
+    text-align: center;
+  }
+  body main .content .wrapper a {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=main.css.map */

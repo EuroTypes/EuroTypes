@@ -15,7 +15,12 @@
     <!-- Title -->
     <div class="logo"><img src="/src/img/svg/wide-logo.svg" alt="" srcset=""></div>
     <!-- menu switch -->
-    <div class="menu-switch"></div>
+    <div class="menu-switch">
+      <input type="checkbox"/>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
   <aside>
     <!-- menu items -->
@@ -29,7 +34,7 @@
   <main>
     <!-- coming soon  -->
     <div class="content">
-      <div></div>
+      <div class="spacer"></div>
       <h2>
         <span>EuroTypes</span><br>
         Custom Mechanical Keyboards
@@ -43,3 +48,35 @@
   
 </body>
 </html>
+
+<nav role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <a href="#"><li>Home</li></a>
+      <a href="#"><li>About</li></a>
+      <a href="#"><li>Info</li></a>
+      <a href="#"><li>Contact</li></a>
+      <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+    </ul>
+  </div>
+</nav>
