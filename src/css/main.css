@@ -104,6 +104,21 @@ header .menu-switch input {
   -webkit-touch-callout: none;
 }
 
+header .menu-switch input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+header .menu-switch input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header .menu-switch input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
 header .menu-switch span {
   display: block;
   width: 33px;
@@ -194,7 +209,7 @@ aside a {
 
 @media only screen and (max-width: 1000px) {
   body {
-        grid-template-areas: "header header" "main main";
+    grid-template-areas: "header header" "main main";
   }
   body aside {
     display: none;
