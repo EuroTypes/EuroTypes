@@ -9,9 +9,24 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  overflow: hidden;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+body .backgroundimg {
+  position: absolute;
+  top: 40vh;
+  right: 5vw;
+  z-index: -1;
+}
+
+body .mobile {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto;
@@ -19,14 +34,6 @@ body {
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
       grid-template-areas: "header header" "aside main";
-  background-color: #fafafa;
-}
-
-body .backgroundimg {
-  position: absolute;
-  top: 0;
-  right: -100px;
-  z-index: -1;
 }
 
 a {
@@ -80,7 +87,7 @@ header .menu-switch {
   display: none;
   position: absolute;
   top: 90px;
-  right: 80px;
+  right: 40px;
   z-index: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -175,12 +182,12 @@ main .content {
       justify-content: space-around;
 }
 
-main .content h2 {
+main .content h1 {
   font-size: 96px;
   font-weight: normal;
 }
 
-main .content h2 span {
+main .content h1 span {
   font-weight: bolder;
 }
 
@@ -227,6 +234,11 @@ aside a {
   body header .menu-switch {
     display: block;
   }
+  body header .logo img {
+    width: 60vw;
+    max-width: 369px;
+    height: auto;
+  }
   body aside {
     position: absolute;
     top: 190px;
@@ -251,7 +263,7 @@ aside a {
   body main .content .spacer {
     display: none;
   }
-  body main .content h2 {
+  body main .content h1 {
     display: none;
   }
   body main .content .wrapper {

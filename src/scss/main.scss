@@ -9,25 +9,33 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  overflow: hidden;
 
   width: 100vw;
   height: 100vh;
 
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "header header"
-    "aside main";
+  overflow: hidden;
 
   background-color: #fafafa;
 
-  .backgroundimg{
+  .backgroundimg {
     position: absolute;
-    top: 0;
-    right: -100px;
+    top: 40vh;
+    right: 5vw;
     z-index: -1;
+  }
+  .mobile{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "header header"
+      "aside main";
   }
 }
 
@@ -43,21 +51,21 @@ header {
 
   grid-area: header;
 
-  .logo{
+  .logo {
     margin: 40px;
   }
 
-  .menu-switch{
+  .menu-switch {
     display: none;
     position: absolute;
     top: 90px;
-    right: 80px;
-    
+    right: 40px;
+
     z-index: 1;
-    
+
     -webkit-user-select: none;
     user-select: none;
-    input{
+    input {
       display: block;
       width: 40px;
       height: 32px;
@@ -72,8 +80,7 @@ header {
 
       -webkit-touch-callout: none;
 
-      &:checked ~ span
-      {
+      &:checked ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px);
         background: #232323;
@@ -86,32 +93,30 @@ header {
       &:checked ~ span:nth-last-child(1) {
         transform: rotate(-45deg) translate(-1px, -4px);
       }
-      &:checked ~ ul
-      {
+      &:checked ~ ul {
         transform: none;
       }
     }
-    span{
+    span {
       display: block;
       width: 33px;
       height: 4px;
       margin-bottom: 5px;
       position: relative;
-      
+
       background: #1b1317;
       border-radius: 3px;
-      
+
       z-index: 1;
-      
+
       transform-origin: 4px 0px;
-      
-      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                  opacity 0.55s ease;
-      &:first-child{
+
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+      &:first-child {
         transform-origin: 0% 0%;
       }
-      &:nth-last-child(2){
+      &:nth-last-child(2) {
         transform-origin: 0% 100%;
       }
     }
@@ -130,19 +135,18 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    h2 {
+    h1 {
       font-size: 96px;
       font-weight: normal;
-      span{
+      span {
         font-weight: bolder;
       }
     }
-    p{
+    p {
       font-size: 64px;
     }
-    a{
+    a {
       font-size: 24px;
-
     }
   }
 }
@@ -157,12 +161,11 @@ aside {
   height: calc(100vh - 190px);
 
   padding-top: 20px;
-  
+
   transition: 0.3s ease-out;
 
   z-index: 1;
 
-  
   transform: translate(0, 0);
 
   a {
@@ -174,16 +177,22 @@ aside {
 
 @media only screen and (max-width: 1000px) {
   body {
-
-    header{
-      .menu-switch{
+    header {
+      .menu-switch {
         display: block;
+      }
+      .logo {
+        img {
+          width: 60vw;
+          max-width: 369px;
+          height: auto;
+        }
       }
     }
     grid-template-areas:
-    "header header"
-    "main main";
-    aside{
+      "header header"
+      "main main";
+    aside {
       position: absolute;
       top: 190px;
       width: 100vw;
@@ -195,30 +204,30 @@ aside {
 
       padding-top: 10vh;
 
-      a{
+      a {
         font-size: 36px;
       }
     }
-    
-    main{
+
+    main {
       width: 100vw;
-      .content{
+      .content {
         width: 100vw;
-        .spacer{
+        .spacer {
           display: none;
         }
-        h2{
+        h1 {
           display: none;
         }
-        .wrapper{
+        .wrapper {
           display: flex;
           flex-direction: column;
           justify-items: center;
           align-items: center;
-          p{
+          p {
             text-align: center;
           }
-          a{
+          a {
             text-align: center;
           }
         }
