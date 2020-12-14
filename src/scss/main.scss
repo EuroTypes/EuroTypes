@@ -26,7 +26,7 @@ body {
   .backgroundimg{
     position: absolute;
     top: 0;
-    right: -10px;
+    right: -100px;
     z-index: -1;
   }
 }
@@ -48,7 +48,7 @@ header {
   }
 
   .menu-switch{
-    display: block;
+    display: none;
     position: absolute;
     top: 90px;
     right: 80px;
@@ -71,17 +71,24 @@ header {
       z-index: 2; /* and place it over the hamburger */
 
       -webkit-touch-callout: none;
-      &:checked ~ span {
+
+      &:checked ~ span
+      {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px);
         background: #232323;
       }
-      &:checked ~ span:nth-last-child(3) {
+
+      &:checked ~ span:nth-last-child(2) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
       }
-      &:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
+      &:checked ~ span:nth-last-child(1) {
+        transform: rotate(-45deg) translate(-1px, -4px);
+      }
+      &:checked ~ ul
+      {
+        transform: none;
       }
     }
     span{
@@ -107,7 +114,9 @@ header {
       &:nth-last-child(2){
         transform-origin: 0% 100%;
       }
+    }
   }
+}
 
 main {
   grid-area: main;
@@ -139,14 +148,22 @@ main {
 }
 
 aside {
+  background-color: #fafafa;
   grid-area: aside;
   display: flex;
   flex-direction: column;
 
   width: 20vw;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 190px);
 
   padding-top: 20px;
+  
+  transition: 0.3s ease-out;
+
+  z-index: 1;
+
+  
+  transform: translate(0, 0);
 
   a {
     font-weight: bold;
@@ -157,12 +174,32 @@ aside {
 
 @media only screen and (max-width: 1000px) {
   body {
+
+    header{
+      .menu-switch{
+        display: block;
+      }
+    }
     grid-template-areas:
     "header header"
     "main main";
     aside{
-      display: none;
+      position: absolute;
+      top: 190px;
+      width: 100vw;
+      height: calc(100vh - 190px);
+
+      align-items: center;
+
+      transform: translate(100vw, 0);
+
+      padding-top: 10vh;
+
+      a{
+        font-size: 36px;
+      }
     }
+    
     main{
       width: 100vw;
       .content{
@@ -188,3 +225,4 @@ aside {
       }
     }
   }
+}
