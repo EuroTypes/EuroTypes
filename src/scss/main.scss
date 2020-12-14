@@ -15,13 +15,6 @@ body {
 
   overflow: hidden;
 
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "header header"
-    "aside main";
-
   background-color: #fafafa;
 
   .backgroundimg {
@@ -29,6 +22,19 @@ body {
     top: 0;
     right: -100px;
     z-index: -1;
+  }
+  .mobile{
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "header header"
+      "aside main";
   }
 }
 
