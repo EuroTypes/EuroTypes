@@ -73,6 +73,15 @@ a:hover::after, a:focus::after {
 header {
   width: 100vw;
   height: 190px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -80,7 +89,50 @@ header {
 }
 
 header .logo {
+  display: inline-block;
   margin: 40px;
+}
+
+header ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 50vw;
+}
+
+header ul h2 {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  text-align: center;
+  margin: 0px auto;
+}
+
+header ul h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: #1b1317;
+  border-radius: 50px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0, 0.79, 0.79, 0.93);
+  transition: -webkit-transform 0.5s cubic-bezier(0, 0.79, 0.79, 0.93);
+  transition: transform 0.5s cubic-bezier(0, 0.79, 0.79, 0.93);
+  transition: transform 0.5s cubic-bezier(0, 0.79, 0.79, 0.93), -webkit-transform 0.5s cubic-bezier(0, 0.79, 0.79, 0.93);
+}
+
+header ul h2:hover::after, header ul h2:focus::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 
 header .menu-switch {
@@ -168,7 +220,22 @@ main {
   height: calc(100vh - 190px);
 }
 
-main .content {
+main .slider {
+  width: 80vw;
+  height: calc(100vh - 190px);
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main .slider .content-Home {
+  min-width: 80vw;
   width: 80vw;
   height: calc(100vh - 190px);
   display: -webkit-box;
@@ -182,20 +249,169 @@ main .content {
       justify-content: space-around;
 }
 
-main .content h1 {
+main .slider .content-Home h1 {
   font-size: 96px;
   font-weight: normal;
 }
 
-main .content h1 span {
+main .slider .content-Home h1 span {
   font-weight: bolder;
 }
 
-main .content p {
+main .slider .content-Home p {
   font-size: 64px;
 }
 
-main .content a {
+main .slider .content-Home a {
+  font-size: 24px;
+}
+
+main .slider .content-About {
+  min-width: 80vw;
+  width: 80vw;
+  height: calc(100vh - 190px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .slider .content-About h2 {
+  font-size: 64px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+main .slider .content-About p {
+  font-size: 24px;
+}
+
+main .slider .content-About a {
+  font-size: 24px;
+}
+
+main .slider .content-About .companyPhoto {
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .slider .content-About .companyPhoto img {
+  width: 70vw;
+  height: auto;
+}
+
+main .slider .content-Com {
+  min-width: 80vw;
+  width: 80vw;
+  height: calc(100vh - 190px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .slider .content-Com h2 {
+  font-size: 64px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+main .slider .content-Com p {
+  font-size: 24px;
+}
+
+main .slider .content-Com a {
+  font-size: 24px;
+}
+
+main .slider .content-Archive {
+  min-width: 80vw;
+  width: 80vw;
+  height: calc(100vh - 190px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .slider .content-Archive h2 {
+  font-size: 64px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+main .slider .content-Archive p {
+  font-size: 64px;
+}
+
+main .slider .content-Archive a {
+  font-size: 24px;
+}
+
+main .slider .content-Archive .photoGrid {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80vw;
+}
+
+main .slider .content-Archive .photoGrid img {
+  width: 35vw;
+  padding: 2vw;
+}
+
+main .slider .content-Contact {
+  min-width: 80vw;
+  width: 80vw;
+  height: calc(100vh - 190px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .slider .content-Contact h1 {
+  font-size: 96px;
+  font-weight: normal;
+}
+
+main .slider .content-Contact h1 span {
+  font-weight: bolder;
+}
+
+main .slider .content-Contact p {
+  font-size: 64px;
+}
+
+main .slider .content-Contact a {
   font-size: 24px;
 }
 
@@ -231,6 +447,9 @@ aside a {
   body {
         grid-template-areas: "header header" "main main";
   }
+  body header #mainMenu {
+    display: none;
+  }
   body header .menu-switch {
     display: block;
   }
@@ -257,16 +476,24 @@ aside a {
   body main {
     width: 100vw;
   }
-  body main .content {
+  body main .slider {
+    width: 100vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow-y: scroll;
+  }
+  body main .slider .content {
     width: 100vw;
   }
-  body main .content .spacer {
+  body main .slider .content .spacer {
     display: none;
   }
-  body main .content h1 {
+  body main .slider .content h1 {
     display: none;
   }
-  body main .content .wrapper {
+  body main .slider .content .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -279,10 +506,10 @@ aside a {
         -ms-flex-align: center;
             align-items: center;
   }
-  body main .content .wrapper p {
+  body main .slider .content .wrapper p {
     text-align: center;
   }
-  body main .content .wrapper a {
+  body main .slider .content .wrapper a {
     text-align: center;
   }
 }
