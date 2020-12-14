@@ -17,8 +17,8 @@ body {
 
 body .backgroundimg {
   position: absolute;
-  top: 0;
-  right: -100px;
+  top: 40vh;
+  right: 5vw;
   z-index: -1;
 }
 
@@ -182,12 +182,12 @@ main .content {
       justify-content: space-around;
 }
 
-main .content h2 {
+main .content h1 {
   font-size: 96px;
   font-weight: normal;
 }
 
-main .content h2 span {
+main .content h1 span {
   font-weight: bolder;
 }
 
@@ -263,7 +263,7 @@ aside a {
   body main .content .spacer {
     display: none;
   }
-  body main .content h2 {
+  body main .content h1 {
     display: none;
   }
   body main .content .wrapper {

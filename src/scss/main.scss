@@ -19,8 +19,8 @@ body {
 
   .backgroundimg {
     position: absolute;
-    top: 0;
-    right: -100px;
+    top: 40vh;
+    right: 5vw;
     z-index: -1;
   }
   .mobile{
@@ -135,7 +135,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    h2 {
+    h1 {
       font-size: 96px;
       font-weight: normal;
       span {
@@ -216,7 +216,7 @@ aside {
         .spacer {
           display: none;
         }
-        h2 {
+        h1 {
           display: none;
         }
         .wrapper {
