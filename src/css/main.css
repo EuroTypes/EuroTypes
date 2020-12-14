@@ -25,7 +25,7 @@ body {
 body .backgroundimg {
   position: absolute;
   top: 0;
-  right: -10px;
+  right: -100px;
   z-index: -1;
 }
 
@@ -76,6 +76,83 @@ header .logo {
   margin: 40px;
 }
 
+header .menu-switch {
+  display: none;
+  position: absolute;
+  top: 90px;
+  right: 80px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+header .menu-switch input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+header .menu-switch input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(-2px, -1px);
+          transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+header .menu-switch input:checked ~ span:nth-last-child(2) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header .menu-switch input:checked ~ span:nth-last-child(1) {
+  -webkit-transform: rotate(-45deg) translate(-1px, -4px);
+          transform: rotate(-45deg) translate(-1px, -4px);
+}
+
+header .menu-switch input:checked ~ ul {
+  -webkit-transform: none;
+          transform: none;
+}
+
+header .menu-switch span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #1b1317;
+  border-radius: 3px;
+  z-index: 1;
+  -webkit-transform-origin: 4px 0px;
+          transform-origin: 4px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+header .menu-switch span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+header .menu-switch span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
 main {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -116,6 +193,7 @@ main .content a {
 }
 
 aside {
+  background-color: #fafafa;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: aside;
@@ -127,13 +205,73 @@ aside {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 20vw;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 190px);
   padding-top: 20px;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  z-index: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 aside a {
   font-weight: bold;
   margin: 20px 40px;
   font-size: 24px;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+        grid-template-areas: "header header" "main main";
+  }
+  body header .menu-switch {
+    display: block;
+  }
+  body aside {
+    position: absolute;
+    top: 190px;
+    width: 100vw;
+    height: calc(100vh - 190px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translate(100vw, 0);
+            transform: translate(100vw, 0);
+    padding-top: 10vh;
+  }
+  body aside a {
+    font-size: 36px;
+  }
+  body main {
+    width: 100vw;
+  }
+  body main .content {
+    width: 100vw;
+  }
+  body main .content .spacer {
+    display: none;
+  }
+  body main .content h2 {
+    display: none;
+  }
+  body main .content .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body main .content .wrapper p {
+    text-align: center;
+  }
+  body main .content .wrapper a {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=main.css.map */
