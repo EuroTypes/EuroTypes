@@ -80,7 +80,7 @@ header .menu-switch {
   display: none;
   position: absolute;
   top: 90px;
-  right: 80px;
+  right: 40px;
   z-index: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -226,6 +226,11 @@ aside a {
   }
   body header .menu-switch {
     display: block;
+  }
+  body header .logo img {
+    width: 60vw;
+    max-width: 369px;
+    height: auto;
   }
   body aside {
     position: absolute;
