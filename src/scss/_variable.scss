@@ -1,1 +1,35 @@
-$textColor: #fafafa;
+$colors: (
+  // Light theme
+  // =====================
+  "backgroundMain-Light": #fafafa,
+  "backgroundNav-Light": #ffffff0e,
+  "backgroundCard-Light": #5290e00e,
+  "Text-Light": #1b1317,
+  // Dark Theme
+  // =====================
+  "backgroundMain-Dark": #1d1d1d,
+  "backgroundNav-Dark": #1d1d1d67,
+  "Text-Dark": #f3f3f3,
+  // "backgroundClr-Dark": #fafafa,
+  // "backgroundNav-Light": #ffffff0e,
+);
+
+@function Color($sort) {
+  @return map-get($colors, $sort);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --Background-Main: #{Color(backgroundMain-Light)};
+    --Background-Nav: #{Color(backgroundNav-Light)};
+    --Background-Card: #{Color(backgroundCard-Light)};
+    --Text-Color: #{Color(Text-Light)};
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --Background-Main: #{Color(backgroundMain-Dark)};
+    --Background-Nav: #{Color(backgroundNav-Dark)};
+    --Text-Color: #{Color(Text-Dark)};
+  }
+}

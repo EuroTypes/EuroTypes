@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "./mixins/mixins";
+@import "./variable";
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #1b1317;
+  color: var(--Text-Color);
 }
 
 body {
@@ -15,7 +17,7 @@ body {
 
   overflow: hidden;
 
-  background-color: #fafafa;
+  background-color: var(--Background-Main);
 
   .backgroundimg {
     position: absolute;
@@ -23,7 +25,7 @@ body {
     right: 5vw;
     z-index: -1;
   }
-  .mobile{
+  .mobile {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -41,18 +43,40 @@ body {
 
 a {
   text-decoration: none;
-  @include HoverFx(2px, #1b1317, 0);
+  @include HoverFx(2px, var(--Text-Color), 0);
   width: max-content;
 }
 
 header {
   width: 100vw;
   height: 190px;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
 
   grid-area: header;
 
   .logo {
+    display: inline-block;
     margin: 40px;
+    height: 10%;
+    .logoIcon {
+      height: 100px;
+      fill: var(--Text-Color);
+    }
+  }
+
+  ul {
+    display: inline-flex;
+    width: 50vw;
+
+    h2 {
+      @include HoverFx(2px, var(--Text-Color), 0);
+      width: max-content;
+      text-align: center;
+      margin: 0px auto;
+    }
   }
 
   .menu-switch {
@@ -83,7 +107,7 @@ header {
       &:checked ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px);
-        background: #232323;
+        background: var(--Text-Color);
       }
 
       &:checked ~ span:nth-last-child(2) {
@@ -104,7 +128,7 @@ header {
       margin-bottom: 5px;
       position: relative;
 
-      background: #1b1317;
+      background: var(--Text-Color);
       border-radius: 3px;
 
       z-index: 1;
@@ -122,37 +146,141 @@ header {
     }
   }
 }
-
 main {
+  $height: 100vh;
   grid-area: main;
 
   width: 80vw;
-  height: calc(100vh - 190px);
-
-  .content {
+  height: calc(#{$height} - 190px);
+  .slider {
     width: 80vw;
-    height: calc(100vh - 190px);
+    height: calc(#{$height} - 190px);
+    transition: 0.3s ease-out;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    h1 {
-      font-size: 96px;
-      font-weight: normal;
-      span {
-        font-weight: bolder;
+    flex-direction: row;
+    .content-Home {
+      min-width: 80vw;
+      width: 80vw;
+      height: calc(#{$height} - 190px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h1 {
+        font-size: 96px;
+        font-weight: normal;
+        span {
+          font-weight: bolder;
+        }
+      }
+      p {
+        font-size: 64px;
+      }
+      a {
+        font-size: 24px;
       }
     }
-    p {
-      font-size: 64px;
+    .content-About {
+      min-width: 80vw;
+      width: 80vw;
+      height: calc(#{$height} - 190px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h2 {
+        font-size: 64px;
+        font-weight: bolder;
+        text-align: center;
+      }
+      p {
+        font-size: 24px;
+      }
+      a {
+        font-size: 24px;
+      }
+      .companyPhoto {
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+        img {
+          width: 70vw;
+          height: auto;
+        }
+      }
     }
-    a {
-      font-size: 24px;
+    .content-Com {
+      min-width: 80vw;
+      width: 80vw;
+      height: calc(#{$height} - 190px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h2 {
+        font-size: 64px;
+        font-weight: bolder;
+        text-align: center;
+      }
+      p {
+        font-size: 24px;
+      }
+      a {
+        font-size: 24px;
+      }
+    }
+    .content-Archive {
+      min-width: 80vw;
+      width: 80vw;
+      height: calc(#{$height} - 190px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h2 {
+        font-size: 64px;
+        text-align: center;
+        font-weight: bolder;
+      }
+      p {
+        font-size: 64px;
+      }
+      a {
+        font-size: 24px;
+      }
+      .photoGrid {
+        display: inline-flex;
+        justify-content: center;
+        width: 80vw;
+
+        img {
+          width: 35vw;
+          padding: 2vw;
+        }
+      }
+    }
+    .content-Contact {
+      min-width: 80vw;
+      width: 80vw;
+      height: calc(#{$height} - 190px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h1 {
+        font-size: 96px;
+        font-weight: normal;
+        span {
+          font-weight: bolder;
+        }
+      }
+      p {
+        font-size: 64px;
+      }
+      a {
+        font-size: 24px;
+      }
     }
   }
 }
-
 aside {
-  background-color: #fafafa;
+  background-color: var(--Background-Nav);
+  backdrop-filter: blur(30px);
   grid-area: aside;
   display: flex;
   flex-direction: column;
@@ -174,10 +302,12 @@ aside {
     font-size: 24px;
   }
 }
-
 @media only screen and (max-width: 1000px) {
   body {
     header {
+      #mainMenu {
+        display: none;
+      }
       .menu-switch {
         display: block;
       }
@@ -211,24 +341,30 @@ aside {
 
     main {
       width: 100vw;
-      .content {
+      .slider {
         width: 100vw;
-        .spacer {
-          display: none;
-        }
-        h1 {
-          display: none;
-        }
-        .wrapper {
-          display: flex;
-          flex-direction: column;
-          justify-items: center;
-          align-items: center;
-          p {
-            text-align: center;
+        flex-direction: column;
+
+        overflow-y: scroll;
+        .content {
+          width: 100vw;
+          .spacer {
+            display: none;
           }
-          a {
-            text-align: center;
+          h1 {
+            display: none;
+          }
+          .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+            p {
+              text-align: center;
+            }
+            a {
+              text-align: center;
+            }
           }
         }
       }
