@@ -11,6 +11,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --Background-Main: #1d1d1d;
+    --Background-Nav: #1d1d1d67;
     --Text-Color: #f3f3f3;
   }
 }
@@ -107,6 +108,12 @@ header {
 header .logo {
   display: inline-block;
   margin: 40px;
+  height: 10%;
+}
+
+header .logo .logoIcon {
+  height: 100px;
+  fill: var(--Text-Color);
 }
 
 header ul {
@@ -432,7 +439,9 @@ main .slider .content-Contact a {
 }
 
 aside {
-  background-color: var(--Background-Main);
+  background-color: var(--Background-Nav);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: aside;

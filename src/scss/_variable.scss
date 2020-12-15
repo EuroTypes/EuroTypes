@@ -8,6 +8,7 @@ $colors: (
   // Dark Theme
   // =====================
   "backgroundMain-Dark": #1d1d1d,
+  "backgroundNav-Dark": #1d1d1d67,
   "Text-Dark": #f3f3f3,
   // "backgroundClr-Dark": #fafafa,
   // "backgroundNav-Light": #ffffff0e,
@@ -28,7 +29,7 @@ $colors: (
 @media (prefers-color-scheme: dark) {
   :root {
     --Background-Main: #{Color(backgroundMain-Dark)};
+    --Background-Nav: #{Color(backgroundNav-Dark)};
     --Text-Color: #{Color(Text-Dark)};
   }
 }
-

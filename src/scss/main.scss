@@ -60,6 +60,11 @@ header {
   .logo {
     display: inline-block;
     margin: 40px;
+    height: 10%;
+    .logoIcon {
+      height: 100px;
+      fill: var(--Text-Color);
+    }
   }
 
   ul {
@@ -274,7 +279,8 @@ main {
   }
 }
 aside {
-  background-color: var(--Background-Main);
+  background-color: var(--Background-Nav);
+  backdrop-filter: blur(30px);
   grid-area: aside;
   display: flex;
   flex-direction: column;
