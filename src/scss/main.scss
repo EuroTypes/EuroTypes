@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "./mixins/mixins";
+@import "./variable";
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #1b1317;
+  color: var(--Text-Color);
 }
 
 body {
@@ -15,7 +17,7 @@ body {
 
   overflow: hidden;
 
-  background-color: #fafafa;
+  background-color: var(--Background-Main);
 
   .backgroundimg {
     position: absolute;
@@ -41,7 +43,7 @@ body {
 
 a {
   text-decoration: none;
-  @include HoverFx(2px, #1b1317, 0);
+  @include HoverFx(2px, var(--Text-Color), 0);
   width: max-content;
 }
 
@@ -58,6 +60,11 @@ header {
   .logo {
     display: inline-block;
     margin: 40px;
+    height: 10%;
+    .logoIcon {
+      height: 100px;
+      fill: var(--Text-Color);
+    }
   }
 
   ul {
@@ -65,7 +72,7 @@ header {
     width: 50vw;
 
     h2 {
-      @include HoverFx(2px, #1b1317, 0);
+      @include HoverFx(2px, var(--Text-Color), 0);
       width: max-content;
       text-align: center;
       margin: 0px auto;
@@ -100,7 +107,7 @@ header {
       &:checked ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px);
-        background: #232323;
+        background: var(--Text-Color);
       }
 
       &:checked ~ span:nth-last-child(2) {
@@ -121,7 +128,7 @@ header {
       margin-bottom: 5px;
       position: relative;
 
-      background: #1b1317;
+      background: var(--Text-Color);
       border-radius: 3px;
 
       z-index: 1;
@@ -140,20 +147,21 @@ header {
   }
 }
 main {
+  $height: 100vh;
   grid-area: main;
 
   width: 80vw;
-  height: calc(100vh - 190px);
+  height: calc(#{$height} - 190px);
   .slider {
     width: 80vw;
-    height: calc(100vh - 190px);
+    height: calc(#{$height} - 190px);
     transition: 0.3s ease-out;
     display: flex;
     flex-direction: row;
     .content-Home {
       min-width: 80vw;
       width: 80vw;
-      height: calc(100vh - 190px);
+      height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -174,7 +182,7 @@ main {
     .content-About {
       min-width: 80vw;
       width: 80vw;
-      height: calc(100vh - 190px);
+      height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -202,15 +210,10 @@ main {
         }
       }
     }
-    p {
-      font-size: 64px;
-    }
-    a {
-      font-size: 24px;
     .content-Com {
       min-width: 80vw;
       width: 80vw;
-      height: calc(100vh - 190px);
+      height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -232,7 +235,7 @@ main {
     .content-Archive {
       min-width: 80vw;
       width: 80vw;
-      height: calc(100vh - 190px);
+      height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -261,7 +264,7 @@ main {
     .content-Contact {
       min-width: 80vw;
       width: 80vw;
-      height: calc(100vh - 190px);
+      height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -279,9 +282,9 @@ main {
     }
   }
 }
-
 aside {
-  background-color: #fafafa;
+  background-color: var(--Background-Nav);
+  backdrop-filter: blur(30px);
   grid-area: aside;
   display: flex;
   flex-direction: column;
@@ -303,7 +306,6 @@ aside {
     font-size: 24px;
   }
 }
-
 @media only screen and (max-width: 1000px) {
   body {
     overflow: hidden;
@@ -425,5 +427,4 @@ aside {
       }
     }
   }
-}
 }
