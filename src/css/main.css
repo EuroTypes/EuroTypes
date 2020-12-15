@@ -107,8 +107,8 @@ header {
 
 header .logo {
   display: inline-block;
-  margin: 40px;
-  height: 10%;
+  padding: 40px;
+  height: 190px;
 }
 
 header .logo .logoIcon {
@@ -427,6 +427,9 @@ main .slider .content-Contact {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .slider .content-Contact h2 {
@@ -478,6 +481,10 @@ aside a {
     overflow: hidden;
   }
   body .mobile {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: 130px auto;
+        grid-template-rows: 130px auto;
         grid-template-areas: "header header" "main main";
   }
   body .mobile .backgroundimg {
@@ -506,13 +513,14 @@ aside a {
   body .mobile header .logo {
     width: 60vw;
     height: auto;
+    padding-top: 60px;
   }
   body .mobile header .logo .logoIcon {
     width: 60vw;
   }
   body .mobile aside {
     position: absolute;
-    top: 190px;
+    top: 130px;
     width: 100vw;
     height: calc(100vh - 130px);
     -webkit-box-align: center;
@@ -584,9 +592,18 @@ aside a {
   body .mobile main .slider .content-Com h2 {
     font-size: 54px;
   }
+  body .mobile main .slider .content-Com p {
+    text-align: center;
+  }
   body .mobile main .slider .content-Archive {
     width: 100vw;
     min-height: calc(100vh - 130px);
+  }
+  body .mobile main .slider .content-Archive .photoGrid {
+    width: 100vw;
+  }
+  body .mobile main .slider .content-Archive .photoGrid img {
+    width: 50vw;
   }
   body .mobile main .slider .content-Contact {
     width: 100vw;
