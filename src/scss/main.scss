@@ -193,7 +193,7 @@ main {
       }
       p {
         font-size: 24px;
-        span{
+        span {
           font-weight: bold;
         }
       }
@@ -222,7 +222,7 @@ main {
         font-weight: bolder;
         text-align: center;
       }
-      h3{
+      h3 {
         text-align: center;
       }
       p {
@@ -333,10 +333,10 @@ aside {
           top: 55px;
         }
         .logo {
-          img {
+          width: 60vw;
+          height: auto;
+          .logoIcon{
             width: 60vw;
-            max-width: 369px;
-            height: auto;
           }
         }
       }
