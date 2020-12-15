@@ -139,7 +139,6 @@ header {
     }
   }
 }
-
 main {
   grid-area: main;
 
@@ -203,6 +202,11 @@ main {
         }
       }
     }
+    p {
+      font-size: 64px;
+    }
+    a {
+      font-size: 24px;
     .content-Com {
       min-width: 80vw;
       width: 80vw;
@@ -421,4 +425,5 @@ aside {
       }
     }
   }
+}
 }

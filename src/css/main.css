@@ -33,7 +33,8 @@ body .mobile {
       grid-template-columns: auto auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-      grid-template-areas: "header header" "aside main";
+      grid-template-areas: "header header"
+ "aside main";
 }
 
 a {
