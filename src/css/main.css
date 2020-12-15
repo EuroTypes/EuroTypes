@@ -33,20 +33,8 @@ body .mobile {
       grid-template-columns: auto auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-<<<<<<< HEAD
       grid-template-areas: "header header"
  "aside main";
-  background-color: #fafafa;
-}
-
-body .backgroundimg {
-  position: absolute;
-  top: 0;
-  right: -10px;
-  z-index: -1;
-=======
-      grid-template-areas: "header header" "aside main";
->>>>>>> b165a4a54dff63825b4b2f396252bb0cf73274a2
 }
 
 a {
@@ -177,19 +165,6 @@ header .menu-switch input {
 
 header .menu-switch input:checked ~ span {
   opacity: 1;
-<<<<<<< HEAD
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-header .menu-switch input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-header .menu-switch input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-=======
   -webkit-transform: rotate(45deg) translate(-2px, -1px);
           transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
@@ -209,7 +184,6 @@ header .menu-switch input:checked ~ span:nth-last-child(1) {
 header .menu-switch input:checked ~ ul {
   -webkit-transform: none;
           transform: none;
->>>>>>> b165a4a54dff63825b4b2f396252bb0cf73274a2
 }
 
 header .menu-switch span {
@@ -472,11 +446,8 @@ aside a {
 
 @media only screen and (max-width: 1000px) {
   body {
-<<<<<<< HEAD
-    grid-template-areas: "header header" "main main";
-=======
-        grid-template-areas: "header header" "main main";
->>>>>>> b165a4a54dff63825b4b2f396252bb0cf73274a2
+        grid-template-areas: "header header"
+ "main main";
   }
   body header #mainMenu {
     display: none;
