@@ -291,6 +291,10 @@ main .slider .content-About p {
   font-size: 24px;
 }
 
+main .slider .content-About p span {
+  font-weight: bold;
+}
+
 main .slider .content-About a {
   font-size: 24px;
 }
@@ -328,6 +332,10 @@ main .slider .content-Com {
 main .slider .content-Com h2 {
   font-size: 64px;
   font-weight: bolder;
+  text-align: center;
+}
+
+main .slider .content-Com h3 {
   text-align: center;
 }
 
@@ -398,13 +406,10 @@ main .slider .content-Contact {
       justify-content: space-around;
 }
 
-main .slider .content-Contact h1 {
-  font-size: 96px;
-  font-weight: normal;
-}
-
-main .slider .content-Contact h1 span {
+main .slider .content-Contact h2 {
+  font-size: 64px;
   font-weight: bolder;
+  text-align: center;
 }
 
 main .slider .content-Contact p {
@@ -445,24 +450,44 @@ aside a {
 
 @media only screen and (max-width: 1000px) {
   body {
+    overflow: hidden;
+  }
+  body .mobile {
         grid-template-areas: "header header" "main main";
   }
-  body header #mainMenu {
+  body .mobile .backgroundimg {
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+    top: 30vh;
+    right: -20vw;
+    z-index: -1;
+  }
+  body .mobile .backgroundimg img {
+    width: 600px;
+    height: auto;
+    overflow: hidden;
+  }
+  body .mobile header {
+    height: 130px;
+  }
+  body .mobile header #mainMenu {
     display: none;
   }
-  body header .menu-switch {
+  body .mobile header .menu-switch {
     display: block;
+    top: 55px;
   }
-  body header .logo img {
+  body .mobile header .logo img {
     width: 60vw;
     max-width: 369px;
     height: auto;
   }
-  body aside {
+  body .mobile aside {
     position: absolute;
     top: 190px;
     width: 100vw;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 130px);
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -470,13 +495,16 @@ aside a {
             transform: translate(100vw, 0);
     padding-top: 10vh;
   }
-  body aside a {
+  body .mobile aside a {
     font-size: 36px;
   }
-  body main {
+  body .mobile main {
     width: 100vw;
   }
-  body main .slider {
+  body .mobile main ::-webkit-scrollbar {
+    display: none;
+  }
+  body .mobile main .slider {
     width: 100vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -484,33 +512,58 @@ aside a {
             flex-direction: column;
     overflow-y: scroll;
   }
-  body main .slider .content {
+  body .mobile main .slider .content-Home {
+    width: 100vw;
+    min-height: calc(100vh - 130px);
+  }
+  body .mobile main .slider .content-Home .spacer {
+    display: none;
+  }
+  body .mobile main .slider .content-Home h1 {
+    padding-left: 5vw;
+    font-size: 50px;
+  }
+  body .mobile main .slider .content-Home h1 span {
+    font-size: 70px;
+  }
+  body .mobile main .slider .content-Home .wrapper {
+    padding-left: 5vw;
+  }
+  body .mobile main .slider .content-Home .wrapper p {
+    font-size: 54px;
+  }
+  body .mobile main .slider .content-About {
+    width: 100vw;
+    min-height: calc(100vh - 130px);
+  }
+  body .mobile main .slider .content-About p {
+    width: 80vw;
+    text-align: center;
+    margin: 0px auto;
+  }
+  body .mobile main .slider .content-About .companyPhoto {
     width: 100vw;
   }
-  body main .slider .content .spacer {
-    display: none;
+  body .mobile main .slider .content-About .companyPhoto img {
+    width: 100vw;
   }
-  body main .slider .content h1 {
-    display: none;
+  body .mobile main .slider .content-About h2 {
+    font-size: 54px;
   }
-  body main .slider .content .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    justify-items: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  body .mobile main .slider .content-Com {
+    width: 100vw;
+    min-height: calc(100vh - 130px);
   }
-  body main .slider .content .wrapper p {
-    text-align: center;
+  body .mobile main .slider .content-Com h2 {
+    font-size: 54px;
   }
-  body main .slider .content .wrapper a {
-    text-align: center;
+  body .mobile main .slider .content-Archive {
+    width: 100vw;
+    min-height: calc(100vh - 130px);
+  }
+  body .mobile main .slider .content-Contact {
+    width: 100vw;
+    min-height: calc(100vh - 130px);
   }
 }
 /*# sourceMappingURL=main.css.map */
