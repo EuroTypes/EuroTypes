@@ -1,10 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@media (prefers-color-scheme: light) {
+  :root {
+    --Background-Main: #fafafa;
+    --Background-Nav: #ffffff0e;
+    --Background-Card: #5290e00e;
+    --Text-Color: #1b1317;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --Background-Main: #1d1d1d;
+    --Text-Color: #f3f3f3;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #1b1317;
+  color: var(--Text-Color);
 }
 
 body {
@@ -12,7 +28,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #fafafa;
+  background-color: var(--Background-Main);
 }
 
 body .backgroundimg {
@@ -33,8 +49,7 @@ body .mobile {
       grid-template-columns: auto auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-      grid-template-areas: "header header"
- "aside main";
+      grid-template-areas: "header header" "aside main";
 }
 
 a {
@@ -52,7 +67,7 @@ a::after {
   bottom: -1px;
   width: 100%;
   height: 2px;
-  background-color: #1b1317;
+  background-color: var(--Text-Color);
   border-radius: 50px;
   -webkit-transform-origin: center;
           transform-origin: center;
@@ -117,7 +132,7 @@ header ul h2::after {
   bottom: -1px;
   width: 100%;
   height: 2px;
-  background-color: #1b1317;
+  background-color: var(--Text-Color);
   border-radius: 50px;
   -webkit-transform-origin: center;
           transform-origin: center;
@@ -167,7 +182,7 @@ header .menu-switch input:checked ~ span {
   opacity: 1;
   -webkit-transform: rotate(45deg) translate(-2px, -1px);
           transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+  background: var(--Text-Color);
 }
 
 header .menu-switch input:checked ~ span:nth-last-child(2) {
@@ -192,7 +207,7 @@ header .menu-switch span {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #1b1317;
+  background: var(--Text-Color);
   border-radius: 3px;
   z-index: 1;
   -webkit-transform-origin: 4px 0px;
@@ -417,7 +432,7 @@ main .slider .content-Contact a {
 }
 
 aside {
-  background-color: #fafafa;
+  background-color: var(--Background-Main);
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: aside;
@@ -446,8 +461,7 @@ aside a {
 
 @media only screen and (max-width: 1000px) {
   body {
-        grid-template-areas: "header header"
- "main main";
+        grid-template-areas: "header header" "main main";
   }
   body header #mainMenu {
     display: none;
@@ -515,4 +529,3 @@ aside a {
     text-align: center;
   }
 }
-/*# sourceMappingURL=main.css.map */
