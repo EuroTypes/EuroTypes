@@ -32,12 +32,8 @@ body {
 
     overflow: hidden;
 
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "header header"
-      "aside main";
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -71,11 +67,12 @@ header {
     display: inline-flex;
     width: 50vw;
 
-    h2 {
+    a {
       @include HoverFx(2px, var(--Text-Color), 0);
       width: max-content;
       text-align: center;
       margin: 0px auto;
+      font-size: 24px;
     }
   }
 
@@ -150,17 +147,17 @@ main {
   $height: 100vh;
   grid-area: main;
 
-  width: 80vw;
+  width: 100vw;
   height: calc(#{$height} - 190px);
   .slider {
-    width: 80vw;
+    width: 100vw;
     height: calc(#{$height} - 190px);
     transition: 0.3s ease-out;
     display: flex;
     flex-direction: row;
     .content-Home {
-      min-width: 80vw;
-      width: 80vw;
+      min-width: 100vw;
+      width: 100vw;
       height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
@@ -180,8 +177,8 @@ main {
       }
     }
     .content-About {
-      min-width: 80vw;
-      width: 80vw;
+      min-width: 100vw;
+      width: 100vw;
       height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
@@ -201,7 +198,7 @@ main {
         font-size: 24px;
       }
       .companyPhoto {
-        width: 80vw;
+        width: 100vw;
         display: flex;
         justify-content: center;
         img {
@@ -211,8 +208,8 @@ main {
       }
     }
     .content-Com {
-      min-width: 80vw;
-      width: 80vw;
+      min-width: 100vw;
+      width: 100vw;
       height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
@@ -233,8 +230,8 @@ main {
       }
     }
     .content-Archive {
-      min-width: 80vw;
-      width: 80vw;
+      min-width: 100vw;
+      width: 100vw;
       height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
@@ -253,7 +250,7 @@ main {
       .photoGrid {
         display: inline-flex;
         justify-content: center;
-        width: 80vw;
+        width: 100vw;
 
         img {
           width: 35vw;
@@ -262,8 +259,8 @@ main {
       }
     }
     .content-Contact {
-      min-width: 80vw;
-      width: 80vw;
+      min-width: 100vw;
+      width: 100vw;
       height: calc(#{$height} - 190px);
       display: flex;
       flex-direction: column;
@@ -283,10 +280,9 @@ main {
     }
   }
 }
-aside {
+menu {
   background-color: var(--Background-Nav);
   backdrop-filter: blur(30px);
-  grid-area: aside;
   display: flex;
   flex-direction: column;
 
@@ -342,13 +338,8 @@ aside {
           }
         }
       }
-      grid-template-columns: auto auto;
-      grid-template-rows: 130px auto;
-      grid-template-areas:
-        "header header"
-        "main main";
       
-      aside {
+      menu {
         position: absolute;
         top: 130px;
         width: 100vw;
@@ -399,7 +390,7 @@ aside {
             width: 100vw;
             min-height: calc(100vh - 130px);
             p {
-              width: 80vw;
+              width: 100vw;
               text-align: center;
               margin: 0px auto;
             }
